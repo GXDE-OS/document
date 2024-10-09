@@ -1,4 +1,8 @@
+# Tips
 
+## GXDE-Terminal
+
+* 终端里存的远程管理ip和密码在 ~/.config/deepin/deepin-terminal/server-config.conf
 
 # 坑
 
