@@ -18,9 +18,9 @@
 ### 5.27
 
 * 依赖deepin-app-service提供服务接口，需要dde-dconfig-daemon和editor配置
-* dbus-wm要打开否则在dock上面滑动鼠标展示所有窗口功能会失效，控制中心也会失效
+* 在dock上面滑动鼠标展示所有窗口功能失效
 * /usr/share下的decoration.json **并不会** 生效
-* （待测试）代码中指定的标题栏宽度 **不会** 随着缩放变化，几个像素就是几个像素
+
 
 ### 5.24
 
