@@ -8,6 +8,11 @@
 * libdtkcore2-dev其实是依赖libdtkcore5-dev的空包
 * libdtkwidget2会通过启动时候put环境变量的方式强制使用dlight主题
 
+## startdde
+
+* 文管和启动器启动应用的dbus在startdde而不是dde-daemon实现
+* https://gitee.com/GXDE-OS/startdde 在测试前不可再推构建，默认session怀疑需要改deepin-desktop-schemas,改GXDE 入口无效，建议Kwin测试完毕之后再改，别一个一个改
+
 ## KWin
 
 ### 5.27
