@@ -4,6 +4,10 @@
 
 * 终端里存的远程管理ip和密码在 ~/.config/deepin/deepin-terminal/server-config.conf
 
+## Dtk5紧凑模式
+
+* `D_DTK_SIZEMODE=1 `
+
 # 坑
 
 ## DTK2 
