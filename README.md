@@ -16,6 +16,7 @@
 * libdtkcore2-dev其实是依赖libdtkcore5-dev的空包
 * libdtkwidget2会通过启动时候put环境变量的方式强制使用dlight主题
 * Dtk2 bin在libdtkcore-bin，而dtk5的是libdtkcore5-bin,但是开发包是反过来的，libdtkwidget-dev是libdtkwidget5的，libdtkwidget2-dev才是dtk2的
+* libdtkwidget2-dev会把Include装/usr/include/dtk5里
 
 ## startdde
 
