@@ -17,6 +17,7 @@
 * libdtkwidget2会通过启动时候put环境变量的方式强制使用dlight主题
 * Dtk2 bin在libdtkcore-bin，而dtk5的是libdtkcore5-bin,但是开发包是反过来的，libdtkwidget-dev是libdtkwidget5的，libdtkwidget2-dev才是dtk2的
 * libdtkwidget2-dev会把Include装/usr/include/dtk5里
+* 如果没有 gxde-qt5integration , Dtk2应用在有Dtk5的环境中会在退出时随机崩溃，所以开发的应用请依赖gxde-qt5integration
 
 ## startdde
 
