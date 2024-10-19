@@ -1,5 +1,7 @@
 # Tips
 
+[缩写对照](./缩写对照表.md)
+
 ## GXDE-Terminal
 
 * 终端里存的远程管理ip和密码在 ~/.config/deepin/deepin-terminal/server-config.conf
