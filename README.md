@@ -26,6 +26,12 @@
 * 文管和启动器启动应用的dbus在startdde而不是dde-daemon实现
 * https://gitee.com/GXDE-OS/startdde 在测试前不可再推构建，默认session怀疑需要改deepin-desktop-schemas,改GXDE 入口无效，建议Kwin测试完毕之后再改，别一个一个改
 
+## dde-daemon
+
+* Go 写的，看不懂，改不动，不敢动
+* 新接口请加到 https://gitee.com/GXDE-OS/gxde-daemon ，尽量别碰dde-daemon
+
+
 ## libdmr/libgxmr
 
 单独维护了gxde-movie,文管等依赖改为libgxmr,引入项目也使用libgxmr
