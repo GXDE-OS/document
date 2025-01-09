@@ -2,6 +2,12 @@
 
 [缩写对照](./缩写对照表.md)
 
+## 添加 文件管理器菜单
+
+Spec: https://gitee.com/shenmo7192/dde-file-manager-menu-oem
+
+也支持： https://blog.shenmo.tech/post/%E5%9C%A8%E6%B7%B1%E5%BA%A6%E6%96%87%E7%AE%A1%E7%9A%84%E8%BE%83%E4%B8%8A%E7%AB%AF%E5%8A%A0%E5%85%A5%E8%8F%9C%E5%8D%95%E9%A1%B9%E5%92%8C%E5%9C%A8%E6%96%87%E7%AE%A1%E9%A6%96%E9%A1%B5%E6%B7%BB%E5%8A%A0desktop/
+
 ## GXDE-Terminal
 
 * 终端里存的远程管理ip和密码在 ~/.config/deepin/deepin-terminal/server-config.conf
