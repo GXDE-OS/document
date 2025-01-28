@@ -16,6 +16,10 @@ Spec: https://gitee.com/shenmo7192/dde-file-manager-menu-oem
 
 * `D_DTK_SIZEMODE=1 `
 
+## 全局背景配置位置
+
+`/usr/share/backgrounds/GXDE/dtk2/global/background-" + theme`，~/.local 也会生效
+
 # 坑
 
 ## DTK2 
