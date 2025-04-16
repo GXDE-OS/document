@@ -10,7 +10,7 @@ Spec: https://gitee.com/shenmo7192/dde-file-manager-menu-oem
 
 ## GXDE-Terminal
 
-* 终端里存的远程管理ip和密码在 ~/.config/deepin/deepin-terminal/server-config.conf
+* 终端里存的远程管理ip和密码在 ~/.config/deepin/gxde-terminal/server-config.conf
 
 ## Dtk5紧凑模式
 
