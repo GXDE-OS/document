@@ -1,5 +1,9 @@
 # Tips
 
+新建模板包
+
+DEBFULLNAME=shenmo DEBEMAIL="shenmo@spark-app.store" dh_make -n -p $(basename $(pwd))_1.0.0 
+
 [缩写对照](./缩写对照表.md)
 
 ## 添加 文件管理器菜单
