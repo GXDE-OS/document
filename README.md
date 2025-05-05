@@ -4,6 +4,18 @@
 
 DEBFULLNAME=shenmo DEBEMAIL="shenmo@spark-app.store" dh_make -n -p $(basename $(pwd))_1.0.0 
 
+## dde-kwin 的作用
+
+deepin-wm-dbus ，用来和 DCC 的 快捷键设置 互动并提供值，用于 dde-dock 的对已打开应用滚轮的互动
+
+## dde-qt-dbus-factory
+
+并非上游版本，为了覆盖掉 Debian 13 的版本实际上是用6.0.0魔改版改版本号到了6.1.0
+
+魔改内容： https://gitee.com/GXDE-OS/dde-qt-dbus-factory/commit/cc9db3d6e4beeb4b7eaae6ff97c9f3062a587795
+
+
+
 [缩写对照](./缩写对照表.md)
 
 ## 添加 文件管理器菜单
