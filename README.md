@@ -4,6 +4,8 @@
 
 DEBFULLNAME=shenmo DEBEMAIL="shenmo@spark-app.store" dh_make -n -p $(basename $(pwd))_1.0.0 
 
+## [缩写对照](./缩写对照表.md)
+
 ## dde-kwin 的作用
 
 deepin-wm-dbus ，用来和 DCC 的 快捷键设置 互动并提供值，用于 dde-dock 的对已打开应用滚轮的互动
@@ -16,7 +18,7 @@ deepin-wm-dbus ，用来和 DCC 的 快捷键设置 互动并提供值，用于 
 
 
 
-[缩写对照](./缩写对照表.md)
+
 
 ## 添加 文件管理器菜单
 
