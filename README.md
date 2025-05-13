@@ -1,5 +1,11 @@
 # Tips
 
+小技巧（后续单独放一个官网页面）
+
+* 在任务栏上对已经打开的应用图标滚动鼠标滚轮可以查看所有该应用的窗口
+* win + A 展示全部窗口
+* 热区很好用
+
 新建模板包
 
 DEBFULLNAME=shenmo DEBEMAIL="shenmo@spark-app.store" dh_make -n -p $(basename $(pwd))_1.0.0 
