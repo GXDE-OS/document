@@ -12,9 +12,13 @@ DEBFULLNAME=shenmo DEBEMAIL="shenmo@spark-app.store" dh_make -n -p $(basename $(
 
 ## [缩写对照](./缩写对照表.md)
 
-## dde-kwin 的作用
+## gxde-wm-shim 的作用
 
-deepin-wm-dbus ，用来和 DCC 的 快捷键设置 互动并提供值，用于 dde-dock 的对已打开应用滚轮的互动
+deepin-wm-dbus ，用来和 GXCC 的 快捷键设置 互动并提供值，用于 dde-dock 的对已打开应用滚轮的互动
+
+kwin的本体在 gxde-kwin，基于 deepin-kwin 修改
+
+
 
 ## dde-qt-dbus-factory
 
@@ -38,7 +42,7 @@ Spec: https://gitee.com/shenmo7192/dde-file-manager-menu-oem
 
 ## Dtk5紧凑模式
 
-* `D_DTK_SIZEMODE=1 `
+* `D_DTK_SIZEMODE=1 `环境变量即可
 
 ## 全局背景配置位置
 
@@ -60,9 +64,9 @@ Spec: https://gitee.com/shenmo7192/dde-file-manager-menu-oem
 * 文管和启动器启动应用的dbus在startdde而不是dde-daemon实现
 * https://gitee.com/GXDE-OS/startdde 在测试前不可再推构建，默认session怀疑需要改deepin-desktop-schemas,改GXDE 入口无效，建议Kwin测试完毕之后再改，别一个一个改
 
-## dde-daemon
+## dde-daemon/deepin-daemon
 
-* Go 写的，看不懂，改不动，不敢动
+* Go 写的，看不懂，改不动，不敢动，为了和dde-daemon区别，使用 deepin-daemon 名
 * 新接口请加到 https://gitee.com/GXDE-OS/gxde-daemon ，尽量别碰dde-daemon
 
 
@@ -74,7 +78,7 @@ Spec: https://gitee.com/shenmo7192/dde-file-manager-menu-oem
 
 ## KWin
 
-### 5.27
+### 6.0
 
 * 依赖deepin-app-service提供服务接口，需要dde-dconfig-daemon和editor配置
 * 在dock上面滑动鼠标展示所有窗口功能失效
