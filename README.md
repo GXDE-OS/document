@@ -59,8 +59,9 @@ Spec: https://gitee.com/shenmo7192/dde-file-manager-menu-oem
 * libdtkwidget2-dev会把Include装/usr/include/dtk5里
 * 如果没有 gxde-qt5integration , Dtk2应用在有Dtk5的环境中会在退出时随机崩溃，所以开发的应用请依赖gxde-qt5integration
 
-## startdde
+## startgxde
 
+* startgxde 的 启动指令是 startdde ，只是换了个包名
 * 文管和启动器启动应用的dbus在startdde而不是dde-daemon实现
 * https://gitee.com/GXDE-OS/startdde 在测试前不可再推构建，默认session怀疑需要改deepin-desktop-schemas,改GXDE 入口无效，建议Kwin测试完毕之后再改，别一个一个改
 
