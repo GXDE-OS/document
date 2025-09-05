@@ -12,6 +12,10 @@
 
 ## [缩写对照](./缩写对照表.md)
 
+## 只在安装后首次执行的任务
+
+dde-first-run 在 https://gitee.com/GXDE-OS/gxde-default-settings ，而执行它的配置在 https://gitee.com/GXDE-OS/gxde-desktop-base
+
 ## gxde-wm-shim 的作用
 
 deepin-wm-dbus ，用来和 GXCC 的 快捷键设置 互动并提供值，用于 dde-dock 的对已打开应用滚轮的互动
