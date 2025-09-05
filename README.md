@@ -14,7 +14,7 @@
 
 ## 只在安装后首次执行的任务
 
-dde-first-run 在 https://gitee.com/GXDE-OS/gxde-default-settings ，而执行它的配置在 https://gitee.com/GXDE-OS/gxde-desktop-base
+dde-first-run 在 https://gitee.com/GXDE-OS/gxde-default-settings ，而执行它的配置在 https://gitee.com/GXDE-OS/gxde-default-settings/blob/master/etc.d/skel/.config/autostart/dde-first-run.desktop
 
 ## gxde-wm-shim 的作用
 
