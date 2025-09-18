@@ -10,6 +10,8 @@
 
 `DEBFULLNAME=shenmo DEBEMAIL="shenmo@spark-app.store" dh_make -n -p $(basename $(pwd))_1.0.0 `
 
+## [飞腾构建特殊要求](./飞腾构建特殊要求.md)
+
 ## [缩写对照](./缩写对照表.md)
 
 ## 只在安装后首次执行的任务
