@@ -8,6 +8,7 @@
 * GXDE截图录屏预计不工作（翻阅源码时发现其在`Wayland`会话下使用`KWAYLAND`）
 
 ![GXDE桌面在Treeland上的用户体验问题](./img/gxde-treeland-issue.png)
+
 （***注意**：桌面体验不包含那根顶栏，这是我为了代替不工作的Dock自己写的*）
 
 ### 后端相关
