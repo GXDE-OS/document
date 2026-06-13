@@ -181,3 +181,6 @@ if (layerSurface->keyboardInteractivity() ==
 
 
 仅在Treeland上发现了这个情况，在Mutter上没有问题，目前针对Treeland做了一个补丁，请见本项目的`gxde-rename-interface-treeland`，仅Treeland下用这个子项目，其它WM均走`gxde-desktop-panel`的原逻辑。
+
+## Wlcom
+当前Wlcom并非原版，部分移植了`DDE Shell`协议（但是没有全部移植），具体实现请参阅[<Wlcom (GXDE forked edition) project root>/src/view/treeland_dde_shell.c](https://gitee.com/GXDE-OS/open-kylin-wlcom/blob/a62b58fdd27bc5daddeae7b0cf1086ee5f10e80b/src/view/treeland_dde_shell.c).
