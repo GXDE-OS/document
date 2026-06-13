@@ -63,6 +63,15 @@ Spec: https://gitee.com/shenmo7192/dde-file-manager-menu-oem
 
 # 坑
 
+## Wayland适配
+如果用**KVM**或者其他虚拟机做Wayland适配工作，需要注意的是Treeland下必须开启软渲染，GL大概率不可用，没有blur支持
+
+推荐虚拟机使用Wlcom，不用开`pixman`软渲染，可以直接在虚拟机上检查模糊效果，然后实体机回Treeland细调
+
+在这几个WM下切换建议切换WM前彻底重启一次
+
+建议`ssh`到VM上，终端挂在那边，必要时可以在VM图形卡死时执行`pkill`或者在WM崩溃后读取日志而不需要切换TTY
+
 ## DTK2 
 
 * libdtkcore2其实是指向libdtkcore5的链接
