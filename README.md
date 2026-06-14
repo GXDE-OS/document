@@ -63,6 +63,15 @@ Spec: https://gitee.com/shenmo7192/dde-file-manager-menu-oem
 
 # 坑
 
+## Wayland适配
+如果用**KVM**或者其他虚拟机做Wayland适配工作，需要注意的是Treeland下必须开启软渲染，GL大概率不可用，没有blur支持
+
+推荐虚拟机使用Wlcom，不用开`pixman`软渲染，可以直接在虚拟机上检查模糊效果，然后实体机回Treeland细调
+
+在这几个WM下切换建议切换WM前彻底重启一次
+
+建议`ssh`到VM上，终端挂在那边，必要时可以在VM图形卡死时执行`pkill`或者在WM崩溃后读取日志而不需要切换TTY
+
 ## DTK2 
 
 * libdtkcore2其实是指向libdtkcore5的链接
@@ -104,3 +113,74 @@ Spec: https://gitee.com/shenmo7192/dde-file-manager-menu-oem
 * dbus-wm要打开否则在dock上面滑动鼠标展示所有窗口功能会失效，控制中心也会失效
 * /usr/share下的decoration.json **并不会** 生效
 * 代码中指定的标题栏宽度 **不会** 随着缩放变化，几个像素就是几个像素
+
+## Treeland
+### 桌面文件重命名/ESC键失效
+
+#### 表象
+
+在Treeland上使用`layer-shell-qt`将`gxde-desktop-panel`改造为Wayland程序，无法对桌面图标进行重命名，桌面面板不接受任何键盘输入。
+
+
+
+#### 原因分析
+
+> **注意**: 以下提及的Treeland源码提交截止至`0d0a4c35c9b6efd8806302f493beececa849ed69`，提交标题为「Merge: 20cd1eb e8dd819」，上游为https://gitee.com/GXDE-OS/treeland.git。
+
+
+
+在Treeland的源码中，`./src/core/shellhandler.cpp`的770 ~ 784行提及了关于`requestActive`的规定：
+
+```C++
+...
+    } else if (wrapper->type() == SurfaceWrapper::Type::Layer) {
+        connect(wrapper, &SurfaceWrapper::requestActive, this, [wrapper]() {
+            auto layerSurface = qobject_cast<WLayerSurface *>(wrapper->shellSurface());
+            if (layerSurface->keyboardInteractivity() == WLayerSurface::KeyboardInteractivity::None)
+                return;
+            /*
+             * if LayerSurface's keyboardInteractivity is `OnDemand`, only allow `Overlay` layer
+             * surface get keyboard focus, to avoid dock/dde-desktop grab keyboard focus When they
+             * restart
+             */
+            if (layerSurface->layer() == WLayerSurface::LayerType::Overlay
+                || layerSurface->keyboardInteractivity()
+                    == WLayerSurface::KeyboardInteractivity::Exclusive)
+                Helper::instance()->activateSurface(wrapper);
+        });
+...
+```
+
+
+
+其中，这里有一行：
+
+```C++
+if (layerSurface->keyboardInteractivity() ==
+    	WLayerSurface::KeyboardInteractivity::None) {
+    return;
+}  // 为了方便阅读我格式化了一下
+```
+
+
+
+以下是对这个操作的注释：
+
+> If `LayerSurface`'s `keyboardInteractivity` is `OnDemand`, only allow `Overlay` layer surface get keyboard focus, to avoid `dock`/`dde-desktop` grab keyboard focus When they restart.
+>
+> 
+>
+> *（我自己翻译的）*
+>
+> 如果`LayerSurface`的`keyboardInteractivity`为`OnDemand`，仅允许`Overlay`类型的表面获取键盘焦点。这么做的目的是防止`dde-dock`/`dde-desktop`在重启时误获取键盘焦点。
+
+
+
+`gxde-desktop-panel`是一个正常的`LayerShellQt::Window::LayerBackground`类而不是`Overlay`类（设置`Background`是对的，不然桌面层级不对），根据上述注释，无法获取键盘焦点...
+
+
+
+仅在Treeland上发现了这个情况，在Mutter上没有问题，目前针对Treeland做了一个补丁，请见本项目的`gxde-rename-interface-treeland`，仅Treeland下用这个子项目，其它WM均走`gxde-desktop-panel`的原逻辑。
+
+## Wlcom
+当前Wlcom并非原版，部分移植了`DDE Shell`协议（但是没有全部移植），具体实现请参阅[<Wlcom (GXDE forked edition) project root>/src/view/treeland_dde_shell.c](https://gitee.com/GXDE-OS/open-kylin-wlcom/blob/a62b58fdd27bc5daddeae7b0cf1086ee5f10e80b/src/view/treeland_dde_shell.c).
